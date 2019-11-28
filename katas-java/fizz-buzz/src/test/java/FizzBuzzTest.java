@@ -31,7 +31,7 @@ public class FizzBuzzTest {
 
 		List<String> numbers = fizzbuzz.getNumbers();
 
-		assertEquals("fizz", numbers.get(2));
+		assertEquals("Fizz", numbers.get(2));
 	}
 
 	@Test
@@ -40,7 +40,7 @@ public class FizzBuzzTest {
 
 		List<String> numbers = fizzbuzz.getNumbers();
 
-		assertEquals("buzz", numbers.get(4));
+		assertEquals("Buzz", numbers.get(4));
 	}
 
 	@Test
@@ -52,11 +52,50 @@ public class FizzBuzzTest {
 		assertEquals("FizzBuzz", numbers.get(14));
 	}
 
-	@Test
-	public void checkMultipleOfThree() {
-		FizzBuzz fizzBuzz = new FizzBuzz();
 
-		assertTrue(fizzBuzz.isMultipleOfThree(3));
+	@Test
+	public void haveHundredNumbers() {
+		FizzBuzz fizzbuzz = new FizzBuzz();
+
+		List<String> numbers = fizzbuzz.getNumbers();
+
+		assertEquals(100, numbers.size());
+	}
+
+	@Test
+	public void numberContainsFiveAndMultipleOf3isFizzBuzz() {
+		FizzBuzz fizzbuzz = new FizzBuzz();
+
+		List<String> numbers = fizzbuzz.getNumbers();
+
+		assertEquals("FizzBuzz", numbers.get(50));
+	}
+
+	@Test
+	public void numberContainsThreeAndMultipleOf5isFizzBuzz() {
+		FizzBuzz fizzbuzz = new FizzBuzz();
+
+		List<String> numbers = fizzbuzz.getNumbers();
+
+		assertEquals("FizzBuzz", numbers.get(34));
+	}
+
+	@Test
+	public void numberContainsFive() {
+		FizzBuzz fizzbuzz = new FizzBuzz();
+
+		List<String> numbers = fizzbuzz.getNumbers();
+
+		assertEquals("Buzz", numbers.get(51));
+	}
+
+	@Test
+	public void numberContainsThree() {
+		FizzBuzz fizzbuzz = new FizzBuzz();
+
+		List<String> numbers = fizzbuzz.getNumbers();
+
+		assertEquals("Fizz", numbers.get(33));
 	}
 
 }
