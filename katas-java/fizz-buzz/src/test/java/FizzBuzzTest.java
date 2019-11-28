@@ -98,4 +98,12 @@ public class FizzBuzzTest {
 		assertEquals("Fizz", numbers.get(33));
 	}
 
+	@Test
+	public void numberContainsThreeAndFive() {
+		FizzBuzz fizzbuzz = new FizzBuzz();
+
+		List<String> numbers = fizzbuzz.getNumbers();
+
+		assertEquals("FizzBuzz", numbers.get(34));
+	}
 }

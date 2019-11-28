@@ -12,20 +12,9 @@ public class FizzBuzz {
     }
 
     private String transform(int number) {
-
-
         if (isFizzBuzz(number)) {
             return "FizzBuzz";
         }
-
-        if (ContainsNumber(number, "5")) {
-            return "Buzz";
-        }
-
-        if (ContainsNumber(number, "3")) {
-            return "Fizz";
-        }
-
 
         if (isFizz(number)) {
             return "Fizz";
@@ -35,37 +24,31 @@ public class FizzBuzz {
             return "Buzz";
         }
 
-
         return String.valueOf(number);
     }
 
     private boolean isFizzBuzz(int number) {
-
-        if (ContainsNumber(number, "5") && isFizz(number)) {
-            return true;
-        }
-
-        if (ContainsNumber(number, "3") && isBuzz(number)) {
-            return true;
-        }
-        return isFizz(number) && isBuzz(number);
-    }
-
-    private boolean ContainsNumber(int number, String s) {
-        return String.valueOf(number).contains(s);
+        return (ContainsNumber(number, "5") && isFizz(number)) ||
+                (ContainsNumber(number, "3") && isBuzz(number)) ||
+                (ContainsNumber(number, "3") && ContainsNumber(number, "5")) ||
+                (isFizz(number) && isBuzz(number));
     }
 
     private boolean isFizz(int number) {
-        return isMultipleOf(number, 3);
+        return (ContainsNumber(number, "3")) ||
+                isMultipleOf(number, 3);
     }
 
-
     private boolean isBuzz(int number) {
-        return isMultipleOf(number, 5);
+        return (ContainsNumber(number, "5")) ||
+                isMultipleOf(number, 5);
     }
 
     private boolean isMultipleOf(int number, int divisor) {
         return number % divisor == 0;
     }
 
+    private boolean ContainsNumber(int number, String s) {
+        return String.valueOf(number).contains(s);
+    }
 }
